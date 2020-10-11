@@ -5,6 +5,7 @@ from pyspark.sql import SQLContext
 
 class Context:
 
+    # function for creating SparkContext
     def context(self):
         try:
             sc = SparkContext()
@@ -13,10 +14,10 @@ class Context:
             print("Context doesn't get Created")
         return spark
 
-
-    def load_data(self):
+    # Load Data from Csv File
+    def load_data(self, spark):
         try:
-            df = spark.read.csv("hdfs://localhost:54310/hadoop/input/HR2m.csv",header=True,inferSchema = True)
+            df = spark.read.csv("hdfs://localhost:54310/hadoop/input/Hr2m.csv",header=True,inferSchema = True)
         except:
             print("Data didn't get loaded")
         return df
