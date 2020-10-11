@@ -11,3 +11,7 @@ class Task:
 
     def country(self, df):
         return df.groupBy('County').count()
+
+
+    def city(self, df):
+        return df.groupBy('City').count()
